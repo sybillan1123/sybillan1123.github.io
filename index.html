@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#759545">
+  <meta name="description" content="在像素山谷走过三道岔路，选出今天心理课要看的电影。">
+  <title>电影岔路 · 心理课选片</title>
+  <link rel='stylesheet' href='fonts.css'>
+  <link rel='stylesheet' href='style.css'>
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="masthead">
+      <div class="brand">
+        <div class="brand-icon" aria-hidden="true"><span>✦</span></div>
+        <div><div class="eyebrow">心理课 · 选片小游戏</div><h1>电影岔路</h1></div>
+      </div>
+      <button id="restart" class="restart" type="button">↺ <span>重新出发</span></button>
+    </header>
+
+    <section class="map-card" aria-label="选片路线地图">
+      <div class="map-top"><span><i></i> 山谷地图</span><span id="map-status">起点</span></div>
+      <div class="map">
+        <div class="landscape-layer">
+          <canvas id="landscape" width="432" height="264" aria-label="像素山谷，沿着岔路走向终点。"></canvas>
+          <div class="place prison" id="prison-label" hidden>《肖申克的救赎》</div>
+          <div class="place fog" id="fog-label" hidden>《盗梦空间》</div>
+        </div>
+      </div>
+      <div class="map-bottom">
+        <ol id="steps" class="steps" aria-label="路线进度">
+          <li aria-current="step"><b>1</b><span>第一岔路</span></li>
+          <li><b>2</b><span>第二岔路</span></li>
+          <li><b>3</b><span>第三岔路</span></li>
+        </ol>
+      </div>
+      <section id="question-card" class="question-card" aria-labelledby="question">
+        <div class="trail"><span id="stage">第 1 题 / 共 3 题</span><span aria-hidden="true">✦</span></div>
+        <h2 id="question" tabindex="-1"></h2>
+        <div id="options" class="options">
+          <button type="button" id="option-a" class="option"><b>A</b><span></span><i aria-hidden="true">→</i></button>
+          <button type="button" id="option-b" class="option"><b>B</b><span></span><i aria-hidden="true">→</i></button>
+        </div>
+        <div id="result" class="result" hidden>
+          <p id="result-description"></p>
+          <button id="play-again" class="again" type="button">↺ 再走一次</button>
+        </div>
+        <div class="card-footer"><p id="message" role="status" aria-live="polite">选择 A 或 B，小人就会沿着那条路走。</p></div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
